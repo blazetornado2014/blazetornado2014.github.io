@@ -1,15 +1,21 @@
 body {
     background-image: url('BlackBackground.jpg');
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5em;
     padding: 0;
     user-select: none;
+    color: #fff;
+    line-height: 1.6;
+    overflow: hidden;
 }
 
 html, body{
     margin: 0;
     height: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .text-anim-1 {
@@ -45,34 +51,41 @@ html, body{
     justify-content: center;
     align-items: center;
     height: auto;
-    padding: 50px 0;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
 }
 
 .text-box {
     text-align: center;
     color: #cfb4db;
     width: 100%;
-    padding: 10px 0;
+    padding: 20px;
     font-size: 1.25em;
     text-transform: capitalize;
     font-weight: bold;
-    animation: fadeIn 6s ease-out; 
+    animation: fadeIn 6s ease-out;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(201, 160, 220, 0.2);
 }
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: translateY(20px);
     }
 
     75% {
         opacity: 0;
+        transform: translateY(10px);
     }
 
     100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
-
 
 .text-anim-2{
     fill: transparent;
@@ -103,54 +116,71 @@ html, body{
 .introduction {
     color: #DADCDC;
     width: 100%;
-    padding: 20rem 0 2rem 0;
+    padding: 15rem 0 1rem 0;
     display: flex; 
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    gap: 1em;
+    gap: 1.5em;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 .introduction > button {
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(198, 185, 185, 0.5),
-        0 0 15px rgba(122, 19, 213, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin: 0 1rem;
+    
+    &:hover {
+        background-color: rgba(122, 19, 213, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
 }
 
 .introduction-container {
-    max-width: 800px;
-    width: 100%;
+    max-width: 900px;
+    width: 80%;
     margin: 0 auto;
-    padding: 0.5em;
-    background: linear-gradient(145deg, #1a1a1a, #292929);
-    border-radius: 0.75em;
+    padding: 0.3em 0.8em;
+    background: rgba(26, 26, 26, 0.9);
+    border-radius: 1em;
     overflow: hidden;
     box-sizing: border-box;
-    margin: 0;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(198, 185, 185, 0.5),
-        0 0 15px rgba(122, 19, 213, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: block;
-    white-space: nowrap; 
+    white-space: nowrap;
+    border: 1px solid rgba(201, 160, 220, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        border-color: rgba(201, 160, 220, 0.4);
+    }
 }
 
 .slider-wrapper{
     transition: transform 1s ease-in-out;
     width: 100%;
+    padding: 0.2em 0; 
 }
 
 .introduction h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #C9A0DC;
+    letter-spacing: 1px;
 }
 
 .introduction p {
-    font-size: 1em;
-    line-height: 1.6;
+    font-size: 1.1em;
+    line-height: 1.4;
     color: #bbb;
-    margin-top: 0
+    margin-top: 0;
+    margin-bottom: 0.3em;
 }
-
 
 .slide {
     display: inline-block; 
@@ -165,39 +195,46 @@ html, body{
 }
 
 .prev-btn, .next-btn {
-    background-color: #333;  
+    background-color: rgba(51, 51, 51, 0.9);  
     color: #fff;
     padding: 15px 30px;  
     border: none;
-    border-radius: 8px;  
+    border-radius: 12px;  
     font-size: 18px; 
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.prev-btn:hover, .next-btn:hover {
-    background-color: #555;  
+    transition: all 0.3s ease;
+    border: 1px solid rgba(201, 160, 220, 0.2);
+    margin: 0 10px;
+    
+    &:hover {
+        background-color: rgba(122, 19, 213, 0.2);
+        transform: translateY(-2px);
+        border-color: rgba(201, 160, 220, 0.4);
+    }
 }
 
 .menu {
     position: relative;
     width: fit-content;
-    background: linear-gradient(90deg, rgba(48, 25, 52, 0.8), rgba(20, 20, 40, 0.8)); 
+    background: rgba(48, 25, 52, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
     z-index: 2;
-    transition: background 0.3s ease; 
+    transition: all 0.3s ease;
+    border: 1px solid rgba(201, 160, 220, 0.1);
 }
 
 .menu:hover {
-    background: linear-gradient(90deg, rgba(70, 35, 90, 0.9), rgba(30, 30, 50, 0.9));
+    background: rgba(70, 35, 90, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    border-color: rgba(201, 160, 220, 0.3);
 }
 
 .navbar a {
@@ -205,34 +242,39 @@ html, body{
     color: #d4bfff; 
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px; 
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #d4bfff;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+    
+    &:hover::after {
+        width: 80%;
+    }
 }
 
 .navbar a:hover,
 .navbar a:focus {
-    background-color: rgba(48, 25, 52, 0.8); 
-    color: #ffffff; 
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); 
+    background-color: rgba(122, 19, 213, 0.2);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
-
 
 .navbar a.active {
     color: #ffffff; 
     font-weight: 600;
-    border-bottom: 2px solid #d4bfff; 
-}
-
-@media screen and (max-width: 768px) {
-    .menu {
-        padding: 0.8rem 5%;
-    }
-
-    .navbar a {
-        font-size: 1.1rem;
-        margin-left: 1.5rem;
-    }
+    border-bottom: 2px solid #d4bfff;
 }
 
 a {
@@ -242,17 +284,38 @@ a {
     font-weight: 500;
     padding: 1.5rem 1rem;
     border-radius: 15px; 
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+        color: #ffffff;
+        background-color: rgba(122, 19, 213, 0.2);
+        transform: translateY(-2px);
+    }
 }
 
 .scroll-top{
     text-align: center;
     padding: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .scroll-top a{
-    border: 2px solid white;
-    padding: 0.5rem;
+    border: 1px solid rgba(201, 160, 220, 0.2);
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+        background: rgba(122, 19, 213, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        border-color: rgba(201, 160, 220, 0.4);
+    }
 }
-
-
